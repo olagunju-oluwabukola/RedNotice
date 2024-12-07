@@ -1,7 +1,7 @@
 
       
       <template>
-        <div class="bg-gradient-to-r from-[#160101] to-[#151212] text-white h-screen p-4">
+        <div class="bg-gradient-to-r from-[#160101] to-[#151212] text-white h-screen w-full p-4">
          
           <div class="flex items-center justify-between header md:py-4 rounded px-4 md:px-10">
             <h1 class="text-xl md:text-2xl font-bold text-red">Dashboard</h1>
@@ -25,7 +25,7 @@
           </div>
       
           
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-9 rounded header">
+          <div class="grid grid-cols-1 md:grid-cols-4 md:gap-4 my-4 md:my-9 rounded header">
 
             <div class="p-4  rounded">
               
@@ -35,8 +35,8 @@
                   :style="{ width: '72%' }"
                 ></div>
               </div>
-              <h2 class="text-[10px] md:text-[12px] font-semibold mt-10 text-gray-300">TOTAL THREAT</h2>
-              <p class="text-xl font-bold text-red">72,540</p>
+              <h2 class="text-[10px] md:text-[12px] font-semibold md:mt-10 text-gray-300">TOTAL THREAT</h2>
+              <p class="md:text-xl font-bold text-red">72,540</p>
             </div>
       
         
@@ -48,8 +48,8 @@
                   :style="{ width: '99%' }"
                 ></div>
               </div>
-              <h2 class="text-[12px] text-gray-300 font-semibold mt-10">SUCCESS RATE</h2>
-              <p class="text-xl font-bold text-blue-500">99%</p>
+              <h2 class="text-[12px] text-gray-300 font-semibold md:mt-10">SUCCESS RATE</h2>
+              <p class="md:text-xl font-bold text-blue-500">99%</p>
             </div>
       
             
@@ -61,8 +61,8 @@
                   :style="{ width: '75%' }"
                 ></div>
               </div>
-              <h2 class="text-[12px] text-gray-300  font-semibold mt-10">DATA PROTECTED</h2>
-              <p class="text-xl font-bold text-orange-500">51,126</p>
+              <h2 class="text-[12px] text-gray-300  font-semibold md:mt-10">DATA PROTECTED</h2>
+              <p class="md:text-xl font-bold text-orange-500">51,126</p>
             </div>
       
             <!-- Failed Protection -->
@@ -74,21 +74,24 @@
                   :style="{ width: '1%' }"
                 ></div>
               </div>
-              <h2 class="text-[12px] text-gray-300 font-semibold mt-10">FAILED PROTECTION</h2>
-              <p class="text-xl font-bold text-green-500">2</p>
+              <h2 class="text-[12px] text-gray-300 font-semibold md:mt-10">FAILED PROTECTION</h2>
+              <p class="md:text-xl font-bold text-green-500">2</p>
             </div>
           </div>
           <div>
             <ApiCards />
+            
           </div>
         </div>
       </template>
       
       <script>
       import ApiCards from "../components/ApiCards.vue";
+    
       export default {
         components: {
     ApiCards,
+    
   },
         setup() {
           return {};

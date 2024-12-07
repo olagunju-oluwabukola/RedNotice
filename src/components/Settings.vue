@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-scre text-white py-10 px-6">
+  <div class=" text-white py-10 px-6">
     <!-- Settings Header -->
     <div class="flex items-center justify-between cards py-4 rounded px-10 ">
             <h1 class="text-xl md:text-2xl font-bold text-red">Settings</h1>
@@ -24,18 +24,18 @@
       
 
   
-    <div class="space-y-6 mt-10 cards p-10">
+    <div class="space-y-6 mt-10 cards p-10 text-[10px] md:text-[12px]">
       
       <h2 class="text-lg font-semibold">General</h2>
 
       
-      <div class="grid grid-cols-2 gap-4 text-sm">
+      <div class="grid grid-cols-2 gap-4 text-[10px] md:text-[12px]">
         <p>Account</p>
         <a href="#" class="text-red hover:underline">Edit data</a>
 
         <p>Billing</p>
-        <div>
-          <p>Pro Membership <span class="text-sm text-blue-900">(active until Aug 2024)</span>
+        <div class="text-[8px] md:text-[12px]">
+          <p>Pro Membership <span class=" text-blue-900">(active until Aug 2024)</span>
             <a href="#" class="text-red ml-2 hover:underline">Upgrade</a>
           </p>
           

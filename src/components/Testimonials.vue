@@ -1,5 +1,5 @@
 <template>
-  <section class="md:block lg:hidden bg-gradient-to-r from-[#160101] to-[#151212] h-screen flex text-white">
+  <section class="md:block lg:hidden bg-gradient-to-r from-[#160101] to-[#151212]  flex text-white">
     <!-- Sidebar -->
     <aside class="w-16 flex flex-col items-center py-4 bg-red-900">
       <button
@@ -10,7 +10,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-white"
+          class="h-8 w-8 text-white bg-red rounded-full p-1"
           :viewBox="item.iconViewBox"
           fill="none"
           stroke="currentColor"
@@ -34,10 +34,7 @@
   </section>
 </template>
 
----
 
-### Script
-```javascript
 <script>
 import { ref, onMounted } from "vue";
 

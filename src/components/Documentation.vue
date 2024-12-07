@@ -19,9 +19,7 @@
               </svg>
             </button>
           </div>
-  <div class="text-2xl font-bold text-center" >
-    No Documentation Yet
-  </div>
+  
 </template>
 
 <script>
