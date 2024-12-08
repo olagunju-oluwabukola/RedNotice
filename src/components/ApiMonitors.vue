@@ -1,9 +1,9 @@
 <template>
-  <section class="py-16 bg-gradient-to-r from-[#160101] to-[#151212] text-white text-center px-16 md:px-12">
+  <section class="pb-16 md:pb-16 bg-gradient-to-r from-[#160101] to-[#151212] text-white text-center px-16 md:px-12">
     <h2 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent mb-4">
       Our API Monitors
     </h2>
-    <p class="text-white mb-10 text-[14px] md:text-xl md:w-2/4 mx-auto">
+    <p class="text-white mb-10 text-[14px] md:text-xl md:w-3/4 lg:w-2/4 mx-auto">
       At RedNotice, we offer a suite of AI-powered solutions to help you stay ahead of cyber threats.
     </p>
 

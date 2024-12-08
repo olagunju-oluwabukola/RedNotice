@@ -1,6 +1,6 @@
 <template>
-  <section class="hidden md:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
-    <div class="text-red text-2xl md:text-3xl text-center mb-6">
+  <section class="hidden md:hidden lg:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
+    <div class="text-3xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">
       Why choose RedNotice
     </div>
 

@@ -7,7 +7,7 @@
         <h1 class="text-3xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">
           Elevate Your Cyber Defense
         </h1>
-      <p class="text-white text-[12px] md:text-sm lg:text-[16px] leading-loosed tracking-widest md:w-2/3">
+      <p class="text-white text-[12px] md:text-sm lg:text-[16px] leading-loosed tracking-widest md:w-3/3 lg:w-2/3">
           RedNotice is an AI-powered Extended Cyber Intelligence platform
           created to safeguard your organization against sophisticated cyber
           threats by providing accurate and actionable insights.
@@ -32,7 +32,7 @@
         <img
           src="/img/logo re 1.svg"
           alt="Cyber Defense Icon"
-          class="animate-spin"
+          class="animate-pulse"
         />
       </div>
     </div>

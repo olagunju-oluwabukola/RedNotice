@@ -1,9 +1,9 @@
 <template>
-    <section class="block md:hidden p-6 bg-gradient-to-r from-[#160101] to-[#151212] text-white w-full">
-      <h2 class=" text-red text-2xl mx-auto md:mx-0  md:text-2xl font-bold mb-6">Running API Monitoring</h2>
+    <section class="block md:hidden lg:hidden p-6 bg-gradient-to-r from-[#160101] to-[#151212] text-white w-full">
+      <h2 class=" text-red text-2xl mx-auto md:mx-0  md:text-3xl font-bold mb-6 text-center">Running API Monitoring</h2>
       <!-- Slider for small screens -->
-      <div class="md:hidden flex flex-col items-center">
-        <div class="relative w-[80%]  overflow-hidden">
+      <div class="md:block lg:hidden flex flex-col items-center">
+        <div class="relative w-full  overflow-hidden">
           <!-- Slider Container -->
           <div
             class="flex transition-transform duration-500"
@@ -25,22 +25,22 @@
                   />
                 </div>
                 <div class="mt-4">
-                  <h3 class="text-red text-[10px] font-bold">
+                  <h3 class="text-red text-[10px] md:text-xl font-bold">
                     PROFILE PROTECTION
                   </h3>
-                  <h4 class="text-[10px] font-semibold mt-2">{{ item.title }}</h4>
-                  <p class="mt-2 text-[8px] text-gray-400">{{ item.description }}</p>
+                  <h4 class="text-[12px] md:text-xl font-semibold mt-2">{{ item.title }}</h4>
+                  <p class="mt-2 text-gray-400 text-[12px] md:text-[15px]" >{{ item.description }}</p>
                 </div>
                 <div class="mt-4 flex justify-between">
-                  <button class="px-1 py-2 text-[10px] underline">Logs</button>
-                  <button class="px-4 py-2 text-[10px] underline">View API</button>
+                  <button class="px-1 py-2 text-[10px] md:text-[14px] underline">Logs</button>
+                  <button class="px-4 py-2 text-[10px] md:text-[14px] underline">View API</button>
                 </div>
               </div>
   
               <!-- "Set up new API Monitoring" Trigger -->
-              <div v-else class="card flex flex-col items-center justify-center">
+              <div v-else class="card flex flex-col items-center justify-center p-20">
                 <div
-                  class="text-5xl text-gray-400 cursor-pointer"
+                  class="text-5xl text-gray-400 cursor-pointer w-10 h-10"
                   @click="showForm = true"
                 >
                   +
@@ -57,7 +57,7 @@
               :key="index"
               :class="[
                 'h-2 w-2 rounded-full cursor-pointer',
-                index === activeSlide ? 'bg-red' : 'bg-gray-400',
+                index === activeSlide ? 'bg-red' : 'bg-white',
               ]"
               @click="goToSlide(index)"
             ></div>
@@ -68,7 +68,7 @@
       <!-- Add New Monitoring Form -->
       <div
         v-if="showForm"
-        class="fixed inset-0 text-red bg-gradient-to-r from-[#160101] to-[#151212] flex items-center justify-center z-50"
+        class="fixed inset-0 text-red bg-gradient-to-r from-[#160101] to-[#151212]  flex items-center justify-center z-50"
       >
         <div class="p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">
           <h2 class="text-xl font-bold mb-4 text-center text-red">Add New Monitoring</h2>

@@ -1,17 +1,17 @@
 <template>
-    <section class="py-16 text-center relative bg-gradient-to-r from-[#160101] to-[#151212]">
-      <div class="absolute inset-0"></div> <!-- Overlay -->
+    <section class="py-12 md:py-16 text-center relative bg-gradient-to-r from-[#160101] to-[#151212]">
+     
       <div class="relative z-10">
-        <h2 class="text-2xl md:text-3xl font-bold text-red mb-8">Testimonials</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-red md:mb-8">Testimonials</h2>
   
         <!-- Grid layout for medium and larger screens -->
-        <div class="hidden md:grid gap-6 md:grid-cols-3">
+        <div class="hidden md:grid gap-6 md:grid-cols-3 text-center md:mx-1 lg:mx-0 py-2 lg:py-10">
           <div
             v-for="(testimonial, index) in testimonials"
             :key="index"
-            class="p-6"          >
+            class="md:p-0 lg:p-6"          >
           
-            <div class="p-16 text-center text-red text-[12px] test">
+            <div class="md:p-10 lg:p-16 text-center text-red text-[12px] test">
                 <img src="/public/img/R N 1.svg" alt="logo" class="w-20 mb-8">
               <p>"{{ testimonial.text }}"</p>
             </div>
@@ -19,7 +19,7 @@
         </div>
   
         <!-- Slider for small screens -->
-        <div class="md:hidden w-[90%] mx-auto">
+        <div class="md:hidden w-[90%] mx-5 p-10">
           <div class="relative overflow-hidden">
             <!-- Slider Container -->
             <div
@@ -29,10 +29,10 @@
               <div
                 v-for="(testimonial, index) in testimonials"
                 :key="index"
-                class="w-full flex-shrink-0 text-red h-60"
+                class="w-full flex-shrink-0 text-red h-64"
                 :style="{ backgroundImage: `url(${testimonial.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }"
               >
-                <div class="p-4 text-[12px] rounded-lg text-red test">
+                <div class="p-6 text-[12px] rounded-lg text-red test">
                     <img src="/public/img/R N 1.svg" alt="logo" class="w-20 mb-8">
                   <p>"{{ testimonial.text }}"</p>
                 </div>
@@ -40,7 +40,7 @@
             </div>
   
             
-            <div class="flex justify-center  space-x-2">
+            <div class="flex justify-center space-x-2">
               <div
                 v-for="(_, index) in testimonials.length"
                 :key="index"
