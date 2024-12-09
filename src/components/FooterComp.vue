@@ -10,7 +10,7 @@
         />
           <!-- Left Section: Links -->
           <div>
-            <h2 class="text-lg font-semibold mb-4 text-3xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">Product</h2>
+            <h2 class="text-lg font-semibold mb-4  bg-gradient-to-r from-red to-white bg-clip-text text-transparent">Product</h2>
             <ul class="space-y-2 text-sm">
               <li><a href="#" class="hover:text-red">Pricing</a></li>
               <li><a href="#" class="hover:text-red">Changelog</a></li>
@@ -31,18 +31,18 @@
           <!-- Right Section: Subscription & Social Media -->
           <div>
             <h2 class="text-lg font-semibold mb-4 bg-gradient-to-r from-red to-white bg-clip-text text-transparent">Stay up to date</h2>
-            <div class="flex mb-4">
+            <div class=" flex md:block lg:flex mb-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                class="flex-1 px-3  md:px-4 py-2 rounded-l bg-gradient-to-r from-red to-black text-white focus:outline-none"
+                class="flex-1 px-3 w-1/3  md:px-4 py-2 rounded-l bg-gradient-to-r from-red to-black text-white focus:outline-none"
               />
               <button class="bg-gradient-to-r from-red to-blacktext-white md:px-4 md:py-2 rounded-r">
                 Subscribe
               </button>
             </div>
             <img src="/img/76744487f26d0848b00b56856a1539ba 1.svg"
-            class="hidden md:block"
+            class="hidden md:flex"
             alt="">
             <!-- Social Media Icons -->
             <div class="flex justify-center space-x-6 mt-4">

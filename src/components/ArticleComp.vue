@@ -47,7 +47,7 @@
         },
         {
           id: 2,
-          image: "/public/img/noescape-ransomware-wallpaper 1.svg",
+          image: "/img/noescape-ransomware-wallpaper 1.svg",
           title: "Technical Analysis of NoEscape Ransomware",
           date: "May 20, 2024 | 5 min read",
           description: "Deep dive into NoEscape, a dangerous ransomware.",
@@ -73,7 +73,5 @@
   };
   </script>
   
-  <style scoped>
-  /* Add additional styles if needed */
-  </style>
+  
   

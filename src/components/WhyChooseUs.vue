@@ -1,12 +1,13 @@
 <template>
-  <section class="hidden md:hidden lg:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
-    <div class="text-3xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">
+  <section class=" lg:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
+    <div class="text-3xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-center mb-4 md:mb-8 text-transparent">
       Why choose RedNotice
     </div>
 
-    <div class="min-h-screen flex text-white">
+    <div class="md:grid lg:flex gap-6 text-white">
+      <img src="/img/Rectangle 6.svg" class="px-6" alt="">
       <!-- Sidebar -->
-      <aside class="w-64 p-4 space-y-4 out">
+      <!-- <aside class="w-64 p-4 space-y-4 out">
         <img src="/img/R N 1.svg" alt="" />
         <nav>
           <ul>
@@ -20,18 +21,18 @@
             </li>
           </ul>
         </nav>
-      </aside>
+      </aside> -->
 
       <!-- Main Content -->
       <main class="flex-1 p-4">
         <div class="flex flex-col md:flex-row gap-6">
-          <div class="flex-1">
+          <!-- <div class="flex-1">
            
             <component :is="activeComponent" />
-          </div>
+          </div> -->
 
           <!-- Side Cards -->
-          <div class="space-y-6 md:w-1/3">
+          <div class="space-y-6">
             <div
               class="p-4 bg-gradient-to-r from-[#160101] to-[#151212] mx-auto rounded-lg shadow-md border border-gray-700 text-center"
               v-for="(card, index) in sideCards"

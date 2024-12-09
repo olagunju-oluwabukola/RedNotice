@@ -1,6 +1,6 @@
 <template>
      
-  <section class="md:block lg:hidden bg-gradient-to-r from-[#160101] to-[#151212] text-white">
+  <section class="hidden bg-gradient-to-r from-[#160101] to-[#151212] text-white">
     <div class="text-red text-2xl md:text-3xl text-center mb-6">
       Why choose RedNotice
     </div>

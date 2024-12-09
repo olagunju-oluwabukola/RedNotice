@@ -1,5 +1,5 @@
 <template>
-    <section class="block md:hidden lg:hidden p-6 bg-gradient-to-r from-[#160101] to-[#151212] text-white w-full">
+    <section class="hidden lg:hidden p-6 bg-gradient-to-r from-[#160101] to-[#151212] text-white w-full">
       <h2 class=" text-red text-2xl mx-auto md:mx-0  md:text-3xl font-bold mb-6 text-center">Running API Monitoring</h2>
       <!-- Slider for small screens -->
       <div class="md:block lg:hidden flex flex-col items-center">

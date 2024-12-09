@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex bg-gray-900 text-white">
+    <div class="min-h-screen flex mx-8 text-white">
       <aside class="w-64 bg-gray-800 p-4 space-y-4">
         <h1 class="text-xl font-bold">RedNotice</h1>
         <nav>
