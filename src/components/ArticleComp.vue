@@ -4,7 +4,7 @@
         <h2 class="text-2xl text-red md:text-3xl lg:text-4xl font-bold text-center mb-10">
           Read Our Latest News
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="mx-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <article
             v-for="article in articles"
             :key="article.id"

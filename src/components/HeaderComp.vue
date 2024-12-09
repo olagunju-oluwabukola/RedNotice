@@ -12,7 +12,7 @@
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden lg:block space-x-6">
-        <a href="#" class="text-[#C30000]">Home</a>
+        <router-link to="/" class="text-[#C30000]">Home</router-link>
         <a href="#" class="hover:text-red">Company</a>
         <a href="#" class="hover:text-red">Solutions</a>
         <a href="#" class="hover:text-red">Pricing</a>
@@ -20,9 +20,8 @@
       </nav>
 
       <!-- Desktop Action Buttons -->
-       
       <div class="hidden lg:flex space-x-4 items-center">
-        <a href="#" class="flex items-center space-x-2 hover:underline">
+        <router-link to="/login" class="flex items-center space-x-2 hover:underline">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -38,8 +37,7 @@
             />
           </svg>
           <span>Sign In</span>
-       
-        </a>
+        </router-link>
         <button class="px-4 py-2 bg-gradient-to-r from-red text-white rounded-md shadow-md hover:opacity-90">
           Request a demo
         </button>
@@ -83,12 +81,13 @@
     <!-- Mobile & Tablet Menu -->
     <div v-if="isMobileMenuOpen" class="lg:hidden bg-black">
       <nav class="space-y-2 p-4">
-        <a href="#" class="block text-red hover:text-white">Home</a>
+        <router-link to="/" class="block text-red hover:text-white">Home</router-link>
         <a href="#" class="block text-white hover:text-red-600">Company</a>
         <a href="#" class="block text-white hover:text-red-600">Solutions</a>
         <a href="#" class="block text-white hover:text-red-600">Pricing</a>
         <a href="#" class="block text-white hover:text-red-600">Blog</a>
-        <svg
+        <router-link to="/login" class="flex items-center space-x-2 text-white hover:underline mt-4">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -102,11 +101,8 @@
               d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
             />
           </svg>
-        <a href="#" class="flex items-center space-x-2 text-white hover:underline mt-4">
-          
           <span>Sign In</span>
-          
-        </a>
+        </router-link>
         <button class="w-full px-4 py-2 bg-gradient-to-r from-red to-black text-white rounded-md shadow-md hover:opacity-90">
           Request a demo
         </button>
@@ -132,7 +128,7 @@ export default {
 </script>
 
 <style scoped>
-.icon{
+.icon {
   border: 1px solid white;
   border-radius: 50%;
 }
