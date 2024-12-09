@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-gradient-to-r from-[#160101] to-[#151212] text-white py-12">
+    <section class="bg-gradient-to-r from-[#160101] to-[#151212] text-white py-6 md:py-12">
       <div class="container mx-auto px-4">
         <h2 class="text-2xl text-red md:text-3xl lg:text-4xl font-bold text-center mb-10">
           Read Our Latest News
