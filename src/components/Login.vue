@@ -32,7 +32,7 @@
           v-model="form.email"
           type="email"
           placeholder="Email"
-          class="cards w-full bg-transparent border border-white text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+          class=" w-full bg-white  text-white p-3 rounded-lg focus:ring-2 focus:ring-red"
           required
         />
         <div class="relative">
@@ -40,7 +40,7 @@
             v-model="form.password"
             :type="showPassword ? 'text' : 'password'"
             placeholder="Password"
-            class="cards w-full bg-transparent border border-white text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+            class=" w-full bg-white  text-white p-3 rounded-lg focus:ring-2 focus:ring-red "
             required
           />
           <button
@@ -145,3 +145,5 @@ export default {
   },
 };
 </script>
+
+
