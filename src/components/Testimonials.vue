@@ -1,6 +1,6 @@
 <template>
      
-  <section class=" bg-gradient-to-r from-[#160101] to-[#151212] text-white">
+  <section class="block md:hidden bg-gradient-to-r from-[#160101] to-[#151212] text-white">
     
 
     <div class="flex">

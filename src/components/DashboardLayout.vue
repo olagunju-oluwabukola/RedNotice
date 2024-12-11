@@ -47,11 +47,10 @@
   </style>
    -->
 
-   <template> 
-   <div class="md:hidden">
-    Working on the responsiveness
-   </div>
-    <section class=" hidden lg:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
+   <template>
+  <Testimonials/>
+  <div> Working on the responsiveness</div>
+    <section class=" hidden md:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
       
   
       <div class="md:grid lg:flex gap-6 text-white">
@@ -81,9 +80,9 @@
               <component :is="activeComponent" />
             </div> 
   
-            <div class="space-y-6 w-1/3">
+            <div class="space-y-6">
               <div
-                class="p-4 bg-gradient-to-r from-[#160101] to-[#151212] mx-auto rounded-lg shadow-md border text-center"
+                class="p-4 bg-gradient-to-r from-[#160101] to-[#151212] mx-auto rounded-lg shadow-md border border-gray-700 text-center"
                 v-for="(card, index) in sideCards"
                 :key="index"
               >
@@ -94,6 +93,8 @@
           </div>
         </main>
       </div>
+
+      
     </section>
   </template>
   
@@ -104,7 +105,7 @@
   import Help from "../components/Help.vue";
   import Documentation from "./Documentation.vue";
   import Monitoring from "./Monitoring.vue";
-  
+import Testimonials from "./Testimonials.vue";
   export default {
     setup() {
       const activeComponent = ref(null); 
