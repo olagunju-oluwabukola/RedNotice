@@ -32,7 +32,7 @@
           v-model="form.email"
           type="email"
           placeholder="Email"
-          class=" w-full bg-white  text-white p-3 rounded-lg focus:ring-2 focus:ring-red"
+          class="w-full cards text-white p-3 rounded-lg focus:ring-2 focus:ring-red outline-none"
           required
         />
         <div class="relative">
@@ -40,7 +40,7 @@
             v-model="form.password"
             :type="showPassword ? 'text' : 'password'"
             placeholder="Password"
-            class=" w-full bg-white  text-white p-3 rounded-lg focus:ring-2 focus:ring-red "
+            class="w-full bg-transparent cards text-white p-3 rounded-lg focus:ring-2 focus:ring-red outline-none"
             required
           />
           <button
@@ -52,13 +52,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h.01M12 12h.01M9 12h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
             </svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
-  <circle cx="9" cy="12" r="1" fill="currentColor" />
-  <circle cx="12" cy="12" r="1" fill="currentColor" />
-  <circle cx="15" cy="12" r="1" fill="currentColor" />
-</svg>
-
-
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h.01M12 12h.01M9 12h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
+            </svg>
           </button>
         </div>
         <button
@@ -86,8 +81,6 @@
   </div>
 </template>
 
-
-
 <script>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -111,29 +104,18 @@ export default {
       alert("Google Sign-In is currently unavailable in this mockup.");
     };
 
-    const handleSignIn = async () => {
+    const handleSignIn = () => {
+      // Simulate successful sign-in
       try {
-        const response = await fetch("https://example.com/api/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form.value),
-        });
+        // Set a mock token for demonstration purposes
+        localStorage.setItem("token", "mock_token");
 
-        if (response.ok) {
-          const data = await response.json();
-          message.value = "Sign-in successful!";
-          isSuccess.value = true;
+        // Simulate a success message
+        message.value = "Sign-in successful!";
+        isSuccess.value = true;
 
-  
-          localStorage.setItem("token", data.token);
-          router.push({ name: "Dashboard" });
-        } else {
-          const errorData = await response.json();
-          message.value = errorData.message || "Sign-in failed. Please try again.";
-          isSuccess.value = false;
-        }
+        // Navigate to the dashboard
+        router.push({ name: "Dashboard" });
       } catch (error) {
         message.value = "An error occurred. Please try again.";
         isSuccess.value = false;
@@ -146,4 +128,9 @@ export default {
 };
 </script>
 
-
+<style scoped>
+/* Optional Styling for Additional Polish */
+button:focus {
+  outline: none;
+}
+</style>

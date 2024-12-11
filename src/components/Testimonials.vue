@@ -1,9 +1,7 @@
 <template>
      
-  <section class="hidden bg-gradient-to-r from-[#160101] to-[#151212] text-white">
-    <div class="text-red text-2xl md:text-3xl text-center mb-6">
-      Why choose RedNotice
-    </div>
+  <section class=" bg-gradient-to-r from-[#160101] to-[#151212] text-white">
+    
 
     <div class="flex">
       <aside class="w-16 flex flex-col items-center py-4 bg-red-900">

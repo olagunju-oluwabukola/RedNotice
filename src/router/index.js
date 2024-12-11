@@ -2,8 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/HomeView.vue';
 import Login from '../views/Login.vue';
 import signup from '../components/Signup.vue'
-import WhyChooseUs from '../components/WhyChooseUs.vue'
-
+import DashboardLayout from '../components/DashboardLayout.vue';
 const routes = [
   {
     path: '/',
@@ -21,9 +20,9 @@ const routes = [
   component: signup
  },
  {
-  path:'/Dashboard',
+  path:'/user-dashboard',
   name: 'Dashboard',
-  component: WhyChooseUs
+  component:DashboardLayout
  }
 ];
 
