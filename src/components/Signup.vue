@@ -32,7 +32,7 @@
           v-model="form.email"
           type="email"
           placeholder="Email"
-          class="w-full bg-transparent border border-gray-400 text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+          class="cards w-full bg-transparent border border-gray-400 text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
           required
         />
         <div class="relative">
@@ -40,7 +40,7 @@
             v-model="form.password"
             :type="showPassword ? 'text' : 'password'"
             placeholder="Password"
-            class="w-full bg-transparent border border-gray-400 text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+            class="cards w-full bg-transparent border border-gray-400 text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
             required
           />
           <button
@@ -48,12 +48,16 @@
             class="absolute inset-y-0 right-3 flex items-center text-gray-400"
             @click="togglePasswordVisibility"
           >
-            <svg v-if="showPassword" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg v-if="showPassword" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h.01M12 12h.01M9 12h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
             </svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.98 8.692l-.777-.629C6.307 5.634 8.663 4 12 4c6.627 0 12 5.373 12 12 0 1.627-.217 3.18-.616 4.625M15.929 13.519C17.241 11.363 16.99 8.214 15.404 6c-3.21-2.955-8.579-3.082-11.819-.312" />
-            </svg>
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 text-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
+  <circle cx="9" cy="12" r="1" fill="currentColor" />
+  <circle cx="12" cy="12" r="1" fill="currentColor" />
+  <circle cx="15" cy="12" r="1" fill="currentColor" />
+</svg>
+
           </button>
         </div>
         <button
