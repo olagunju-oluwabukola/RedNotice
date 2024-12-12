@@ -48,7 +48,7 @@
    -->
 
    <template>
-  <Testimonials/>
+ 
   <div> Working on the responsiveness</div>
     <section class=" hidden md:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
       

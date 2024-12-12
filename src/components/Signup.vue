@@ -3,11 +3,15 @@
     <!-- Left Section (Form) -->
     <div class="flex-1 flex flex-col justify-center items-center p-8 md:p-16 bg-gradient-to-b from-red-900 to-black">
       <!-- Header -->
-      <div class="w-full max-w-md text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">🔒 Sign Up</h2>
-        <p class="text-sm md:text-lg text-red mb-8">
-          Already have an account? <router-link to="/login" class="text-white underline">Sign in here</router-link>
-        </p>
+      <div>
+        <h1 class="mb-4 md:mb-8 text-xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">
+          Secure Your Organization Today
+        </h1>
+       <p class="my-3 md:my-8 md:text-lg text-sm">
+        Join RedNotice and empower your business with cutting 
+        edge cyber intelligence solutions.
+       </p>
+   
       </div>
 
       <!-- Google OAuth -->
@@ -28,6 +32,14 @@
 
       <!-- Form -->
       <form @submit.prevent="handleSignUp" class="w-full max-w-md space-y-4">
+        <input
+          v-model="form.name"
+          type="Text"
+          placeholder="Full Name"
+          class=" w-full cards border-gray-400 text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+          required
+        />
+
         <input
           v-model="form.email"
           type="email"
@@ -75,13 +87,14 @@
     </div>
 
     <!-- Right Section (Image) -->
-    <div class="hidden md:flex flex-1 items-center justify-center">
+    <div class="hidden md:hidden lg:flex  flex-1 items-center justify-center">
       <img
-        src="/img/5537562 1.png"
+        src="/img/mmmmmmmmmmmmmmmm 1.png"
         alt="Secure Illustration"
         class="max-w-full max-h-full object-contain"
       />
     </div>
+ 
   </div>
 </template>
 
@@ -94,6 +107,7 @@ export default {
     const router = useRouter();
     const form = ref({
       email: "",
+      name:"",
       password: "",
     });
     const message = ref("");

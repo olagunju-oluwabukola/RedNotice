@@ -3,8 +3,7 @@
       <Hero />
       <ApiMonitors />
       <WhyChooseUs />
-      <!-- <Testimonials /> -->
-      <ApicardsMobile />
+     <ApicardsMobile />
       <TestimonialsCard />
       <ArticleComp />
     </div>

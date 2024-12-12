@@ -73,7 +73,7 @@
     <!-- Right Section (Image) -->
     <div class="hidden md:flex flex-1 items-center justify-center">
       <img
-        src="/img/mmmmmmmmmmmmmmmm 1.png"
+        src="/img/5537562 1.png"
         alt="Secure Illustration"
         class="max-w-full max-h-full object-contain"
       />
