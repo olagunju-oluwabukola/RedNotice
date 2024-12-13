@@ -14,14 +14,14 @@
         </p>
 
         <div class="md:pt-20 py-8">
-          <p class="text-red text-[12px] md:text-[12px] pt-4 md:pt-16">
+          <p class="text-red text-[12px] md:text-[15px] pt-4 md:pt-16">
           Trusted by Open Source, enterprise, and more than 99,000 of you
         </p>
 
         <img
           src="/img/R N 1.svg"
           alt="Cyber Defense Icon"
-          class="h-6 md:h-14 w-1/2 "
+          class="h-6 md:h-20 mt-5"
         />
         </div>
        
@@ -32,7 +32,7 @@
         <img
           src="/img/logo re 1.svg"
           alt="Cyber Defense Icon"
-          class="animate-pulse"
+          class="animate-pulse w-full"
         />
       </div>
     </div>
