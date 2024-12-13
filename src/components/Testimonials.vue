@@ -55,7 +55,7 @@ export default {
   setup() {
     const activeComponent = ref(null); 
 
-    const navItems = [
+    const navItem = [
       {
         name: "Dashboard",
         component: Dashboard,

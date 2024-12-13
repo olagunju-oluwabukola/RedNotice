@@ -1,13 +1,13 @@
 <template>
    <section class="block md:hidden bg-gradient-to-r from-[#160101] to-[#151212] text-white">
-    <p>onclick of any of the circle aside the first one, it renders accurately. 
-       the fist oenshould be dashboard and the default, I will fix it and the icons that should 
-       come with it, or you provide the design for the responsiveness</p>
-
+ 
+    <h1 class=" p-4 text-3xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">
+      Dashboard
+        </h1>
     <div class="flex">
       <aside class="w-16 flex flex-col items-center py-4 bg-red-900">
       <button
-        v-for="(item, index) in navItems"
+        v-for="(item, index) in navItem"
         :key="index"
         class="my-4 w-full py-3 flex justify-center items-center bg-red-800 hover:bg-red-600 rounded-lg"
         @click="setActiveComponent(item.component)"
@@ -40,6 +40,9 @@
  
   </section>
   <section class="hidden md:block bg-gradient-to-r from-[#160101] to-[#151212] py-6 md:py-16 md:px-16">
+    <h1 class=" p-4 text-3xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red to-white bg-clip-text text-transparent">
+      Dashboard
+        </h1>
     <div class="md:grid lg:flex gap-6 text-white">
       <!-- Sidebar -->
       <aside class="out w-1/3 md:w-1/4 p-4 space-y-4">
@@ -104,6 +107,46 @@ export default {
       { name: "Documentation", component: Documentation },
     ];
 
+    const navItem = [
+      {
+        name: "Dashboard",
+        component: Dashboard,
+        iconViewBox: "0 0 24 24",
+        iconPaths: ["M3 10h18M12 3v18"], 
+      },
+      {
+        name: "Monitoring",
+        component: Monitoring,
+        iconViewBox: "0 0 24 24",
+        iconPaths: ["M9 19V5M15 19V5"], 
+      },
+      {
+        name: "Settings",
+        component: Settings,
+        iconViewBox: "0 0 24 24",
+        iconPaths: [
+          "M12 1v2M17.31 3.69l1.42-1.42M23 12h-2M20.31 17.31l1.42 1.42M12 23v-2M6.69 20.31l-1.42 1.42M1 12h2M3.69 6.69L2.27 5.27",
+          "M12 8a4 4 0 100 8 4 4 0 000-8z",
+        ], 
+      },
+      {
+        name: "Help",
+        component: Help,
+        iconViewBox: "0 0 24 24",
+        iconPaths: [
+          "M12 19h.01M12 15a4 4 0 110-8 4 4 0 010 8zM12 3C8.13 3 5 6.13 5 10a7 7 0 1014 0c0-3.87-3.13-7-7-7z",
+        ], 
+      },
+      {
+        name: "Documentation",
+        component: Documentation,
+        iconViewBox: "0 0 24 24",
+        iconPaths: [
+          "M12 4v16M8 8h8M8 12h8M8 16h8",
+        ], 
+      },
+    ];
+
     const sideCards = [
       {
         title: "Comprehensive Protection, Simplified",
@@ -136,6 +179,7 @@ export default {
       navItems,
       sideCards,
       setActiveComponent,
+      navItem
     };
   },
 };

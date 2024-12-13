@@ -1,10 +1,10 @@
 
       
       <template>
-        <div class="hidden md:block bg-gradient-to-r from-[#160101] to-[#151212] text-white  w-full p-4">
+        <div class=" md:block bg-gradient-to-r from-[#160101] to-[#151212] text-white  w-full p-4">
          
           <div class="flex items-center justify-between header md:py-4 rounded px-4 md:px-10">
-            <h1 class="text-xl md:text-2xl font-bold text-red">Dashboard</h1>
+         
             <button class="relative">
               <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full"></span>
               <svg

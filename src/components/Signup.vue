@@ -11,7 +11,6 @@
         Join RedNotice and empower your business with cutting 
         edge cyber intelligence solutions.
        </p>
-   
       </div>
 
       <!-- Google OAuth -->
@@ -34,7 +33,7 @@
       <form @submit.prevent="handleSignUp" class="w-full max-w-md space-y-4">
         <input
           v-model="form.name"
-          type="Text"
+          type="text"
           placeholder="Full Name"
           class=" w-full cards border-gray-400 text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
           required
@@ -52,7 +51,7 @@
             v-model="form.password"
             :type="showPassword ? 'text' : 'password'"
             placeholder="Password"
-        class="cards w-full  text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+            class="cards w-full  text-white p-3 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
             required
           />
           <button
@@ -64,12 +63,11 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12h.01M12 12h.01M9 12h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
             </svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 text-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
-  <circle cx="9" cy="12" r="1" fill="currentColor" />
-  <circle cx="12" cy="12" r="1" fill="currentColor" />
-  <circle cx="15" cy="12" r="1" fill="currentColor" />
-</svg>
-
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
+              <circle cx="9" cy="12" r="1" fill="currentColor" />
+              <circle cx="12" cy="12" r="1" fill="currentColor" />
+              <circle cx="15" cy="12" r="1" fill="currentColor" />
+            </svg>
           </button>
         </div>
         <button
@@ -80,10 +78,18 @@
         </button>
       </form>
 
-      <!-- Response Message -->
-      <p v-if="message" class="text-sm mt-4 text-center" :class="{'text-green-500': isSuccess, 'text-red-500': !isSuccess}">
-        {{ message }}
-      </p>
+      <!-- Popup Modal -->
+      <div v-if="popupMessage" class="fixed inset-0 bg-gradient-to-r from-[#160101] to-[#151212] bg-opacity-75 flex items-center justify-center ">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+          <p>{{ popupMessage }}</p>
+          <button
+            class="mt-4 px-4 py-2 bg-red text-white rounded-lg hover:bg-red-800"
+            @click="closePopup"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Right Section (Image) -->
@@ -94,7 +100,6 @@
         class="max-w-full max-h-full object-contain"
       />
     </div>
- 
   </div>
 </template>
 
@@ -107,50 +112,49 @@ export default {
     const router = useRouter();
     const form = ref({
       email: "",
-      name:"",
+      name: "",
       password: "",
     });
-    const message = ref("");
-    const isSuccess = ref(false);
+    const popupMessage = ref("");
     const showPassword = ref(false);
 
     const togglePasswordVisibility = () => {
       showPassword.value = !showPassword.value;
     };
 
+    const closePopup = () => {
+      popupMessage.value = "";
+    };
+
     const handleGoogleSignIn = () => {
-      alert("Google Sign-In is currently unavailable in this mockup.");
+      popupMessage.value = "Google Sign-In is currently unavailable in this mockup.";
     };
 
     const handleSignUp = async () => {
       try {
-        const response = await fetch("https://example.com/api/register", {
+        const response = await fetch("https://rednotice1234.great-site.net/public/api/v1/register", {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(form.value),
         });
 
-        if (response.ok) {
-          message.value = "Registration successful! Redirecting to login...";
-          isSuccess.value = true;
-          setTimeout(() => {
-            router.push({ name: "Login" }); // Redirect to the login page
-          }, 2000);
-        } else {
-          const data = await response.json();
-          message.value = data.message || "Registration failed. Please try again.";
-          isSuccess.value = false;
-        }
+        // Clear form fields after submission
+        form.value.email = "";
+        form.value.name = "";
+        form.value.password = "";
+
+        // Show a popup message
+        popupMessage.value = "Registration Successful";
       } catch (error) {
-        message.value = "An error occurred. Please try again.";
-        isSuccess.value = false;
+        popupMessage.value = "An error occurred. Please try again.";
         console.error("Error:", error);
       }
     };
 
-    return { form, message, isSuccess, showPassword, togglePasswordVisibility, handleSignUp, handleGoogleSignIn };
+    return { form, popupMessage, showPassword, togglePasswordVisibility, closePopup, handleSignUp, handleGoogleSignIn };
   },
 };
 </script>
