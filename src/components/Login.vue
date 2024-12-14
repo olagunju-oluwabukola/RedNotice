@@ -64,6 +64,13 @@
           Sign In
         </button>
       </form>
+
+      <!-- Forgot Password -->
+      <div class="w-full max-w-md mt-4 text-right">
+        <router-link class="text-gray-300 text-sm underline hover:text-red" to="/forgot-password">
+          Forgot your password?
+        </router-link>
+      </div>
     </div>
 
     <!-- Right Section (Image) -->
@@ -75,15 +82,13 @@
       />
     </div>
 
-    <!-- Popup Message -->
+    <!-- Popup Modal -->
     <div
       v-if="message"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
     >
       <div class="bg-white text-black rounded-lg shadow-lg p-6 w-80">
-        <h3 class="text-xl font-bold mb-4" :class="{'text-green-500': isSuccess, 'text-red-500': !isSuccess}">
-          {{ isSuccess ? 'Success' : 'Error' }}
-        </h3>
+        <h3 class="text-xl font-bold mb-4" :class="{'text-green-500': isSuccess, 'text-red-500': !isSuccess}">{{ isSuccess ? 'Success' : 'Error' }}</h3>
         <p class="text-sm mb-4">{{ message }}</p>
         <button
           @click="message = ''"
@@ -97,7 +102,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 export default {
@@ -116,65 +121,70 @@ export default {
     };
 
     const handleGoogleSignIn = () => {
-      alert("Google Sign-In is currently unavailable in this mockup.");
+      window.location.href = "https://rednotice1234.great-site.net/auth/google";
+    };
+
+    const handleGoogleCallback = async () => {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token"); 
+
+        if (token) {
+          localStorage.setItem("token", token);
+          message.value = "Sign-in successful!";
+          isSuccess.value = true;
+          router.push({ name: "Dashboard" });
+        } else {
+          throw new Error("Authentication failed. Please try again.");
+        }
+      } catch (error) {
+        message.value = error.message;
+        isSuccess.value = false;
+      }
     };
 
     const handleSignIn = async () => {
-  try {
-    console.log("Attempting to sign in with:", form.value);
+      try {
+        console.log("Attempting to sign in with:", form.value);
 
-    const response = await fetch("https://rednotice1234.great-site.net/public/api/v1/login", {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form.value),
+        const response = await fetch("https://rednotice1234.great-site.net/v1/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form.value),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(errorText || "Failed to sign in. Please check your credentials.");
+        }
+
+        const data = await response.json();
+
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+          message.value = "Sign-in successful!";
+          isSuccess.value = true;
+          router.push({ name: "Dashboard" });
+        } else {
+          throw new Error(data.message || "Login failed. Please try again.");
+        }
+      } catch (error) {
+        message.value = error.message || "An error occurred. Please try again.";
+        isSuccess.value = false;
+        console.error("Login Error:", error);
+      }
+    };
+
+    
+    onMounted(() => {
+      if (window.location.pathname.includes("/auth/google/callback")) {
+        handleGoogleCallback();
+      }
     });
-
-    // Log the response status and body
-    console.log("Response Status:", response.status);
-    const responseText = await response.text();
-    console.log("Response Text:", responseText);
-
-    // Check if the response is OK and contains a body
-    if (!response.ok) {
-      throw new Error(responseText || "Failed to sign in. Please check your credentials.");
-    }
-
-    let data = {};
-    try {
-      // Only attempt to parse if the response is not empty
-      data = responseText ? JSON.parse(responseText) : {};
-    } catch (error) {
-      console.error("Failed to parse response JSON:", error);
-    }
-
-    // Check if the API response contains a token
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-      message.value = "Sign-in successful!";
-      isSuccess.value = true;
-      router.push({ name: "Dashboard" });
-    } else {
-      throw new Error(data.message || "Login failed. Please try again.");
-    }
-  } catch (error) {
-    message.value = error.message || "An error occurred. Please try again.";
-    isSuccess.value = false;
-    console.error("Login Error:", error);
-  }
-};
-
-
 
     return { form, message, isSuccess, showPassword, togglePasswordVisibility, handleSignIn, handleGoogleSignIn };
   },
 };
 </script>
-
-<style scoped>
-button:focus {
-  outline: none;
-}
-</style>

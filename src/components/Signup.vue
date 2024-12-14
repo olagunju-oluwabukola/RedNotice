@@ -131,28 +131,31 @@ export default {
     };
 
     const handleSignUp = async () => {
-      try {
-        const response = await fetch("https://rednotice1234.great-site.net/public/api/v1/register", {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form.value),
-        });
+  try {
+    const response = await fetch("https://rednotice1234.great-site.net/public/api/v1/register", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form.value),
+    });
 
-        // Clear form fields after submission
-        form.value.email = "";
-        form.value.name = "";
-        form.value.password = "";
+    form.value.email = "";
+    form.value.name = "";
+    form.value.password = "";
 
-        // Show a popup message
-        popupMessage.value = "Registration Successful";
-      } catch (error) {
-        popupMessage.value = "An error occurred. Please try again.";
-        console.error("Error:", error);
-      }
-    };
+    popupMessage.value = "Registration Successful";
+
+    setTimeout(() => {
+      router.push("/login");
+    }, 2000); 
+  } catch (error) {
+    popupMessage.value = "An error occurred. Please try again.";
+    console.error("Error:", error);
+  }
+};
+
 
     return { form, popupMessage, showPassword, togglePasswordVisibility, closePopup, handleSignUp, handleGoogleSignIn };
   },

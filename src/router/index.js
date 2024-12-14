@@ -3,6 +3,8 @@ import Home from '../views/HomeView.vue';
 import Login from '../views/Login.vue';
 import signup from '../components/Signup.vue'
 import DashboardLayout from '../components/DashboardLayout.vue';
+import ForgotPassword from '../views/ForgotPassword.vue';
+
 const routes = [
   {
     path: '/',
@@ -23,6 +25,11 @@ const routes = [
   path:'/user-dashboard',
   name: 'Dashboard',
   component:DashboardLayout
+ },
+ {
+  path: '/forgot-password',
+  name:"forgot-password",
+  component: ForgotPassword
  }
 ];
 

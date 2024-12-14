@@ -5,11 +5,21 @@ export default defineConfig({
   plugins: [vue()], // Include Vue plugin for Vite
   server: {
     proxy: {
+      // Proxy for API requests
       '/api': {
         target: 'https://rednotice1234.great-site.net', // Your backend server
-        changeOrigin: true, // Adjust the origin of the host header to the target URL
+        changeOrigin: true, // Change the origin header to match the target
         rewrite: (path) => path.replace(/^\/api/, '/public/api/v1'), // Rewrite '/api' to '/public/api/v1'
-        secure: false, // Disable SSL verification if the backend uses a self-signed certificate
+        secure: false, // Allow requests to servers with self-signed certificates
+        configure: (proxy) => {
+          // Optional: Log proxy errors for debugging
+          proxy.on('proxyRes', (proxyRes) => {
+            console.log('Response from target server:', proxyRes.statusCode);
+          });
+          proxy.on('error', (err, req, res) => {
+            console.error('Proxy Error:', err.message);
+          });
+        },
       },
     },
   },
